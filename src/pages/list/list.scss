@@ -1,58 +1,14 @@
 .list{
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 
-    .listContainer{
-        flex: 6;
-    }
-    form {
-        border: 3px solid #f1f1f1;
-        padding :10px;
-      }
-      
-      /* Full-width inputs */
-      input[type=text], input[type=password] {
-        width: 20%;
-        padding: 20px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-      }
-      
-      /* Set a style for all buttons */
-      button {
-        background-color: rgb(116, 81, 248);
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        float: right;
-        cursor: pointer;
-        width: 10%;
-      }
-      
-      /* Add a hover effect for buttons */
-      button:hover {
-        opacity: 0.8;
-      }
-      
-      /* Add padding to containers */
-      .container {
-        padding: 16px;
-      }
-      
-      /* The "Forgot password" text */
-      span.psw {
-        float: right;
-        padding-top: 16px;
-      }
-      label{
-        padding: 16px;
-      }
-      button{
-        padding: 16px;
-      }
-     
-      
+  .listContainer{
+      flex: 6;  
+  }
+  .card{
+      width: 100%;
+      margin-left: 20px;
+      padding:10px 10px 10px 30px;
+  }
+    
 }

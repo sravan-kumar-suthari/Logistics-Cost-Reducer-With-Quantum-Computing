@@ -1,12 +1,6 @@
 import "./widget.scss";
 const Widget = ({ type }) => {
   let data;
-
-// Temporary
-// const amount = 100;
-// const diff = 20;
-
-
 switch (type) {
     case "user":
         data = {

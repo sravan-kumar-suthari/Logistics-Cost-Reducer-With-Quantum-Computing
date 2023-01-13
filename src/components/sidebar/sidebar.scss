@@ -2,7 +2,7 @@
     flex: 1;
     border-right: 0.5px solid rgb(230,227,227);
     min-height: 100vh;
-    // background-color: rgb(116, 81, 248);
+    background-color: #0d6efd;
 
     .top{
         height: 50px;
@@ -12,9 +12,10 @@
 
 
     .logo{
-        font-size: 25px;
+        font-size: 30px;
+        padding: 15px;
         font-weight: bold;
-        color:black;
+        color:white;
     }
 
     }
@@ -47,18 +48,18 @@
                     cursor: pointer;
 
                     &:hover{
-                        background-color: #ece8ff;
+                        background-color:#6da8fd;
                     }
 
                     .icon{
                         font-size: 18px;
-                        color: #7451f8;
+                        color: white;
                     }
 
                     span{
                         font-size: 20px;
                         font-weight: bold;
-                        color: #888;
+                        color: white;
                         margin-left: 15px;
                     }
                 }

@@ -6,6 +6,7 @@
     -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0, 0.47);
     box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
     height: 100px;
+    
 
     .left, .right{
         display: flex;
@@ -14,8 +15,10 @@
 
     .title{
         font-weight: bold;
-        font-size: 14px;
-        color: rgb(135, 123, 123);
+        font-size: 25px;
+        color:black;
+        padding: 25px;
+        align-items: center;
     }
 
     .counter{
@@ -27,19 +30,6 @@
         width: max-content;
         font-size: 12px;
         border-bottom: 1px solid gray;
-    }
-
-    .percentage{
-        display: flex;
-        align-items: center;
-        font-size: 14px;
-
-        &.positive{
-            color: green;
-        }
-        &.negative{
-            color: red;
-        }
     }
 
     .icon{

@@ -21,19 +21,19 @@ function App() {
   const {darkMode} = useContext(DarkModeContext)
 
   return (
-  //   <div className={darkMode ? "app dark" : "app"}>
-  // <BrowserRouter>
-  //   <Routes>
-  //     <Route path="/" element={<Home/>} />
-  //     <Route path="users" exact>
-  //       <Route index element={<List/>}/>
-  //        </Route>
-  //     <Route path="Chart" element={<Chart/>}/>
-  //     <Route path="Featured" element={<Featured/>}/>
-  //   </Routes>
-  // </BrowserRouter>
-  //   </div>
-<GoogleMapsContainer/>
+    <div className={darkMode ? "app dark" : "app"}>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="users" exact>
+        <Route index element={<List/>}/>
+         </Route>
+      <Route path="Chart" element={<Chart/>}/>
+      <Route path="Featured" element={<Featured/>}/>
+    </Routes>
+  </BrowserRouter>
+    </div>
+
   );
 }
 
