@@ -21,7 +21,7 @@ const Navbar = () => {
           <SearchOutlinedIcon /> */}
         </div>
         <div className="items">
-          <div className="item">
+          {/* <div className="item">
             <LanguageOutlinedIcon className="icon" />
             English
           </div>
@@ -38,7 +38,7 @@ const Navbar = () => {
           <div className="item">
             <ChatBubbleOutlinedIcon className="icon" />
             <div className="counter">1</div>
-          </div>
+          </div> */}
           <div className="item">
             <ListOutLinedIcon className="icon" />
           </div>
