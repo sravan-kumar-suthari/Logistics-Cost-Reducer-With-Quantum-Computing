@@ -28,14 +28,16 @@ const List = () => {
         <div class="card">
         <div class="card-body">
           <h3 class="card-title">Plan Shipment</h3>
-          <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit}>
         <Row className="mb-3">
         <Form.Group as={Col} md="4" controlId="validationCustom01">
-          <Form.Label>Region</Form.Label>
-          <Form.Control
-            required
-            type="text"
-          />
+        <Form.Label>Region</Form.Label>
+        <Form.Select aria-label="Default select example">
+          <option>North</option>
+          <option value="1">East</option>
+          <option value="2">West</option>
+          <option value="3">South</option>
+        </Form.Select>
         </Form.Group>
         </Row>
         <Row className="mb-3">

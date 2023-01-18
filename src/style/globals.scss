@@ -21,10 +21,10 @@ a {
 }
 
 .controls {
-  width: 15%;
-  padding: 1rem;
-  background: #14161a;
-  color: #fff;
+  width: 100%;
+  padding: 2rem;
+  // background: #14161a;
+  color: #000;
 }
 
 .controls input {
@@ -37,7 +37,7 @@ a {
 }
 
 .map {
-  width: 80%;
+  width: 100%;
   height: 100vh;
 }
 
@@ -47,6 +47,7 @@ a {
 }
 
 .combobox-input {
+  display: flex;
   width: 100%;
   padding: 0.5rem;
 }
