@@ -3,11 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import "./list.scss"
+import "./shipment.scss"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
 
-const List = () => {
+const Shipment = () => {
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
@@ -65,4 +65,4 @@ const List = () => {
 )
 }
 
-export default List
+export default Shipment;
