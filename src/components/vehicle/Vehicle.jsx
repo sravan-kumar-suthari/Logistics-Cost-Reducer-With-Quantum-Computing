@@ -3,11 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import "./featured.scss";
+import "./vehicle.scss";
 import Sidebar from "../sidebar/Sidebar";
 import Navbar from "../navbar/Navbar";
 
-const Featured = () => {
+const Vehicle = () => {
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
@@ -65,4 +65,4 @@ const Featured = () => {
   )
 }
 
-export default Featured
+export default Vehicle;

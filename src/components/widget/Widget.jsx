@@ -43,7 +43,6 @@ switch (type) {
             {/* <span className="counter">{data.isMoney} {amount}</span> */}
             {/* <span className="link">{data.link}</span> */}
       </div>
-      
     </div>
   );
 
