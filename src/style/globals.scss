@@ -23,7 +23,7 @@ a {
 .controls {
   width: 15%;
   padding: 1rem;
-  background: #14161a;
+  // background: #14161a;
   color: #fff;
 }
 
@@ -33,12 +33,12 @@ a {
 
 .map-container {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
 }
 
 .map {
-  width: 80%;
-  height: 100vh;
+  width: 100%;
+  height: 50vh;
 }
 
 .highlight {
