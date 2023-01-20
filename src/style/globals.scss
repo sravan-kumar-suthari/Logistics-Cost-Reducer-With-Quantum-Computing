@@ -21,10 +21,10 @@ a {
 }
 
 .controls {
-  width: 15%;
+  width: 100%;
   padding: 1rem;
-  // background: #14161a;
-  color: #fff;
+  background: #14161a;
+  //color: #000;
 }
 
 .controls input {
@@ -47,6 +47,13 @@ a {
 }
 
 .combobox-input {
+  border-radius: 8px;
   width: 100%;
   padding: 0.5rem;
 }
+
+// .left, .right{
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// }

@@ -1,13 +1,11 @@
 import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
-import List from "./pages/list/List";
-import New from "./pages/new/New";
+import Shipment from "./pages/shipment/Shipment";
+import ListLocation from "./pages/listLocation/ListLocation";
 import "./style/dark.scss";
 import { useContext} from "react";
 import { DarkModeContext} from "./context/darkModeContext";
-import Chart from "./components/chart/Chart";
-import Featured from "./components/featured/Featured";
-import GoogleMapsContainer from "./components/googleMaps/GoogleMapsContainer";
+import Location from "./components/location/Location";
+import Vehicle from "./components/vehicle/Vehicle";
 
 import {
   BrowserRouter,
@@ -25,11 +23,10 @@ function App() {
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home/>} />
-      <Route path="users" exact>
-        <Route index element={<List/>}/>
-         </Route>
-      <Route path="Chart" element={<Chart/>}/>
-      <Route path="Featured" element={<Featured/>}/>
+      <Route path="Shipment" element={<Shipment/>}/>
+      <Route path="Location" element={<Location/>}/>
+      <Route path="ListLocation" element={<ListLocation/>}/>
+      <Route path="Vehicle" element={<Vehicle/>}/>
     </Routes>
   </BrowserRouter>
     </div>

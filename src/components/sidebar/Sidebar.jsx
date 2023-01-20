@@ -10,7 +10,7 @@ const Sidebar = () => {
   // const {dispatch} = useContext(DarkModeContext)
 
   return (
-    <div className="sidebar"> 
+    <div className="sidebar">
     <div className="top">
       <Link to="/" style={{textDecoration: "none"}}>
      <span className="logo">Accenture</span>
@@ -26,29 +26,37 @@ const Sidebar = () => {
             <span>Dashboard</span>
             </li>
             </Link>
-            <Link to="/users" style={{textDecoration: "none"}}>
+            <Link to="/Shipment" style={{textDecoration: "none"}}>
             <li>
               <PersonOutlineOutlinedIcon className="icon" />
             <span>Plan Shipment</span>
             </li>
             </Link>
-            <Link to="/Chart" style={{textDecoration: "none"}}>
+            <p className="title">Locations</p>
+            <Link to="/Location" style={{textDecoration: "none"}}>
             <li>
               <StoreIcon className="icon" />
-            <span>Locations</span>
+            <span>Add Location</span>
             </li>
             </Link>
-            <Link to="/Featured" style={{textDecoration: "none"}}>
+            <Link to="/ListLocation" style={{textDecoration: "none"}}>
+            <li>
+              <StoreIcon className="icon" />
+            <span>Location Master List</span>
+            </li>
+            <p className="title">Vehicle</p>
+            </Link>
+            <Link to="/Vehicle" style={{textDecoration: "none"}}>
             <li>
               <CreditCardIcon className="icon" />
-            <span>Vehicales</span>
+            <span>Vehicles</span>
             </li>
             </Link>
         </ul>
 
     </div>
     {/* <div className="bottom">
-        <div className="colorOption" 
+        <div className="colorOption"
         onClick={() => dispatch({ type : "LIGHT"})}>
         </div>
 
