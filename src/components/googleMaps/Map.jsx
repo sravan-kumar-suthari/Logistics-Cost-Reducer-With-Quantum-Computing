@@ -23,7 +23,7 @@ export default function Map() {
     () => ({
       mapId: "b181cac70f27f5e6",
       disableDefaultUI: true,
-      clickableIcons: false,
+      clickableIcons: true,
     }),
     []
   );
@@ -44,7 +44,7 @@ export default function Map() {
       </div>
       <div>
       <Form>
-          <Form.Check 
+          <Form.Check
             type="switch"
             id="custom-switch"
             label="Is Source"

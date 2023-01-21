@@ -21,27 +21,6 @@ const Navbar = () => {
           <SearchOutlinedIcon /> */}
         </div>
         <div className="items">
-          {/* <div className="item">
-            <LanguageOutlinedIcon className="icon" />
-            English
-          </div> */}
-          {/* <div className="item">
-            <DarkModeOutlined className="icon" onClick={() => dispatch({type:"TOGGLE"})}/>
-          </div> */}
-          {/* <div className="item">
-            <FullScreenExitOutlinedIcon className="icon" />
-          </div> */}
-          {/* <div className="item">
-            <NotificationsNoneOutlined className="icon" />
-            <div className="counter">1</div>
-          </div> */}
-          {/* <div className="item">
-            <ChatBubbleOutlinedIcon className="icon" />
-            <div className="counter">1</div>
-          </div> */}
-          {/* <div className="item">
-            <ListOutLinedIcon className="icon" />
-          </div> */}
           <div className="item">
            <img src="https://images.pexels.com/photos/1967902/pexels-photo-1967902.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" className="avatar"/>
           </div>

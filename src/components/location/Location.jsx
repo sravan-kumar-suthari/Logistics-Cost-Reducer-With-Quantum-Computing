@@ -8,12 +8,12 @@ import GoogleMapsContainer from "../googleMaps/GoogleMapsContainer";
 const Location = () => {
   return (
     <div className="list">
-    <Sidebar/>
-    <div className="listContainer">
-    <Navbar/>
-    <br/>
-         <GoogleMapsContainer/> 
-    </div>
+      <Sidebar/>
+      <div className="listContainer">
+      <Navbar/>
+      <br/>
+          <GoogleMapsContainer/>
+      </div>
    </div>
   )
 }
