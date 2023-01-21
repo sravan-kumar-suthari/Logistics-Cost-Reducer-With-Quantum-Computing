@@ -11,6 +11,8 @@ import Navbar from "../../components/navbar/Navbar";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import MapDirections from "./MapDirections";
+import Dropdown from 'react-bootstrap/Dropdown';
+
 // import Card from 'react-bootstrap/Card';
 
 const Shipment = () => {
@@ -41,10 +43,10 @@ const Shipment = () => {
               <Form.Group as={Col} md="4" controlId="validationCustom01">
               <Form.Label>Region</Form.Label>
               <Form.Select aria-label="Default select example">
-                <option>North</option>
-                <option value="1">East</option>
-                <option value="2">West</option>
-                <option value="3">South</option>
+                <option value="North">North</option>
+                <option value="East">East</option>
+                <option value="West">West</option>
+                <option value="South">South</option>
               </Form.Select>
               </Form.Group>
               </Row>

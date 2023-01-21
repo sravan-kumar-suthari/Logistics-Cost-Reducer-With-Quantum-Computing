@@ -29,10 +29,12 @@ export default function Map() {
   );
   const onLoad = useCallback((map) => (mapRef.current = map), []);
   const houses = useMemo(() => generateHouses(center), [center]);
+  console.log(office);
 
   return (
 
-    <><div>
+    <>
+    <Form><div>
       <div>
       <Places
         setOffice={(position) => {
@@ -43,13 +45,14 @@ export default function Map() {
       {directions && <Distance leg={directions.routes[0].legs[0]} />}
       </div>
       <div>
-      <Form>
+
           <Form.Check
             type="switch"
             id="custom-switch"
             label="Is Source"
           />
-      </Form>
+
+
       </div>
     </div>
     <br/>
@@ -77,18 +80,14 @@ export default function Map() {
             {office && (
               <>
                 <Marker
-                  position={office}
-                  icon="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png" />
+                  position={office}/>
 
                 <MarkerClusterer>
                   {(clusterer) => houses.map((house) => (
                     <Marker
                       key={house.lat}
                       position={house}
-                      clusterer={clusterer}
-                      onClick={() => {
-                        // fetchDirections(house);
-                      } } />
+                      clusterer={clusterer} />
                   ))}
                 </MarkerClusterer>
 
@@ -99,7 +98,8 @@ export default function Map() {
             )}
           </GoogleMap>
         </div>
-      </div></>
+      </div>
+      </Form></>
   );
 }
 

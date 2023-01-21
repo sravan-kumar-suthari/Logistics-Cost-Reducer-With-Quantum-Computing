@@ -10,8 +10,12 @@ import React, { useState, useMemo, useCallback, useRef } from 'react';
 
 const MapDirections = () => {
     // const [validated, ] = useState(false);
-    const [office] = useState();
-    const [directions] = useState();
+    const { isLoaded } = useLoadScript({
+      googleMapsApiKey: 'AIzaSyBbuWteIelsDEt9ene34MdyLUxbZ6eiB4w',
+      libraries: ["places"],
+    });
+    const [office, setOffice] = useState();
+    const [directions, setDirections] = useState();
     const mapRef = useRef();
     const center = useMemo(
       () => ({ lat: 43.45, lng: -80.49 }),
@@ -27,8 +31,9 @@ const MapDirections = () => {
     );
     const onLoad = useCallback((map) => (mapRef.current = map), []);
     const houses = useMemo(() => generateHouses(center), [center]);
-
+    if (!isLoaded) return <div>Loading...</div>;
     return (
+
         <div className="map">
           <GoogleMap
             zoom={10}
