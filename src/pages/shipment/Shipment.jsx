@@ -4,22 +4,47 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-// import Container from 'react-bootstrap/Container';
 import "./shipment.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
-import MapDirections from "./MapDirections";
-import Dropdown from 'react-bootstrap/Dropdown';
 
-// import Card from 'react-bootstrap/Card';
+import MapDirections from "./MapDirections";
+import CheckBoxDropdown from './CheckBoxDropdown'
+
 
 const Shipment = () => {
   const [setValidated] = useState(false);
-  const [sourceField, setSourceField] = useState([]);
-  const [destField, setDestField] = useState([]);
+  const [selectedSourceRegions,SetSelectedSourceRegions]=useState([])
+  const [selectedDestinationRegions,SetSelectedDestinationRegions]=useState([])
+  const [selectedTruck,setSelectedTruck]=useState('')
+  const [selectedComputing,setSelectedComputing]=useState('')
 
+  const sourceRegionWH=[
+    {value:'Hyderabad', label:'Hyderabad'},
+    {value:'Delhi', label:'Delhi'},
+    {value:'Kolkata', label:'Kolkata'},
+    {value:'Bangalore', label:'Bangalore'},
+  ];
+  const destinationRegionWH=[
+    {value:'Rajasthan', label:'Rajasthan'},
+    {value:'Pune', label:'Pune'},
+    {value:'Mumbai', label:'Mumbai'},
+    {value:'Lucknow', label:'Lucknow'},
+  ]
+
+  const truckOptions=[
+    {value:'selectTruck',label : 'Select Truck'},
+    {value:'truck1',label : 'Truck1'},
+    {value:'truck2',label : 'Truck2'},
+    {value:'truck3',label : 'Truck3'},
+    {value:'truck4',label : 'Truck4'}
+  ]
+
+  const computingOptions=[
+    {value:'selectTypeOfComputing',label:"Select Type Of Computing"},
+    {value:'cpu',label : 'CPU'},
+    {value:'qpu',label : 'QPU'}
+  ]
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -29,6 +54,8 @@ const Shipment = () => {
 
     setValidated(true);
   };
+
+
   return (
     <div className="list">
       <Sidebar/>
@@ -53,43 +80,37 @@ const Shipment = () => {
               <Row className="mb-3">
               <Form.Group as={Col} md="4" controlId="validationCustom02">
                 <Form.Label>Source Regional WH</Form.Label>
-                  <Form.Control as="select" multiple value={sourceField} onChange={e => setSourceField([].slice.call(e.target.selectedOptions).map(item => item.value))}>
-                    <option value="Hyderabad">Hyderabad</option>
-                    <option value="Kolkata">Kolkata</option>
-                    <option value="Mumbai">Mumbai</option>
-                  </Form.Control>
-              </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationCustom03">
-                <Form.Label>Destination WH</Form.Label>
-                  <Form.Control as="select" multiple value={destField} onChange={e => setDestField([].slice.call(e.target.selectedOptions).map(item => item.value))}>
-                    <option value="Hyderabad">Hyderabad</option>
-                    <option value="Kolkata">Kolkata</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="Ahmedabad">Ahmedabad</option>
-                  </Form.Control>
-              </Form.Group>
-            </Row>
+                </Form.Group>
+                <div className='col-mb-6'>
+                <CheckBoxDropdown options={sourceRegionWH} setRegions={SetSelectedSourceRegions} selectedOptions={selectedSourceRegions}/>
+                </div>
+              </Row>
+              <Row className="mb-3">
+              <Form.Group as={Col} md="4" controlId="validationCustom02">
+                <Form.Label>Source Regional WH</Form.Label>
+                </Form.Group>
+                <div className='col-mb-6'>
+                <CheckBoxDropdown options={destinationRegionWH} setRegions={SetSelectedDestinationRegions} selectedOptions={selectedDestinationRegions}/>
+                </div>
+              </Row>
             <Button type="submit">Generate Optimal Route</Button>
           </Form>
         </div>
       </div>
       <br/>
-      <div class="card">
-        <div class="card-body">
-        <Tabs defaultActiveKey="profile" id="fill-tab-example" className="mb-3" fill>
-        <Tab eventKey="truck_1" title="Truck 1">
-            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3" fill>
-              <Tab eventKey="cpu" title="CPU"> <MapDirections/></Tab>
-              <Tab eventKey="qpu" title="QPU"> <MapDirections/> </Tab>
-            </Tabs>
-        </Tab>
-        <Tab eventKey="truck_2" title="Truck 2">
-          <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3" fill>
-              <Tab eventKey="cpu" title="CPU"> <MapDirections/> </Tab>
-              <Tab eventKey="Qpu" title="QPU"> <MapDirections/> </Tab>
-            </Tabs>
-        </Tab>
-        </Tabs>
+      <div className="card">
+        <div className="card-body" style={{display:"flex", justifyContent:'space-evenly'}}>
+        <Form.Group as={Col} md="4" controlId="truck">
+           <Form.Select aria-label="Default select example" onChange={(e)=>setSelectedTruck(e.target.value)}>
+              {truckOptions.map(truck=> <option value={truck.value} key={truck.value}>{truck.label}</option> )}
+            </Form.Select>
+        </Form.Group>
+
+        <Form.Group as={Col} md="4" controlId="computing">
+            <Form.Select aria-label="Default select example" onChange={(e)=>setSelectedComputing(e.target.value)}>
+              {computingOptions.map(computing=> <option value={computing.value} key={computing.value}>{computing.label}</option> )}
+            </Form.Select>
+        </Form.Group>
         </div>
       </div>
     </div>

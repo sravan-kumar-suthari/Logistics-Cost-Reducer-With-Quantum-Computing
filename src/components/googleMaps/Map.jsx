@@ -7,9 +7,12 @@ import {
   MarkerClusterer,
 } from "@react-google-maps/api";
 import Places from "./Places";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Distance from "./Distance";
 import "../../style/globals.scss";
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 export default function Map() {
   const [office, setOffice] = useState();
@@ -44,16 +47,31 @@ export default function Map() {
       {!office && <p>Enter the address</p>}
       {directions && <Distance leg={directions.routes[0].legs[0]} />}
       </div>
-      <div>
 
+      <Row>
+      <Form.Group as={Col} md="2" controlId="validationCustom01">
           <Form.Check
             type="switch"
             id="custom-switch"
             label="Is Source"
           />
+          </Form.Group>
+       <Form.Group as={Col} md="4" controlId="validationCustom01">
+              {/* <Form.Label>Region</Form.Label> */}
+              <Form.Select aria-label="Default select example">
+                <option value="SelectRegion">Select Region</option>
+                <option value="North">North</option>
+                <option value="East">East</option>
+                <option value="West">West</option>
+                <option value="South">South</option>
+              </Form.Select>
+              </Form.Group>
+              <Form.Group as={Col} md="2" controlId="validationCustom01">
+      <Button style={{marginLeft:'500px'}} type="submit">Add</Button>
+      </Form.Group>
+      </Row>
 
 
-      </div>
     </div>
     <br/>
     <div>
